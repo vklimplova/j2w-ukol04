@@ -25,7 +25,7 @@ vizitku vymaže ze seznamu a přesměrue uživatele na úvodní stránku, kde se
    v seznamu vizitek) a přesměruje uživatele na úviodní stránku. Pro smazání vizitky vytvoř potřebnou metodu ve službě `VizitkaService`.
 1. Zkontroluj výsledek v prohlížeči.
 1. *Commitni* a *pushnni* změny (výsledný kód) do svého repository na GitHubu.
-1. Vlož odkaz na své repository do úkolu na portálu [https://moje.czechitas.cz].
+1. Vlož odkaz na své repository jako řešení úkolu na portálu [Moje Czechitas](https://moje.czechitas.cz).
 
 ## Bootstrap
 Pokud chceš vytvořit formulář, který bude vypadat docela rozumně, a nechceš vytvářet vlastní styly, můžeš použít [Bootstrap](https://getbootstrap.com/). Popis
