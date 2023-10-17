@@ -8,7 +8,7 @@ vizitce. Formulář odešle metodou `POST` data na server, ten přidá vizitku d
 i s právě přidanou vizitkou.
 
 Dále je potřeba na stránku s detailem vizitky přidat tlačítko, které danou vizitku smaže – metodou `POST` odešle na server formulář s `id` vizitky, server
-vizitku vymaže ze seznamu a přesměrue uživatele na úvodní stránku, kde se zobrazí seznam vizitek – tentokrát už bez smazané vizitky.
+vizitku vymaže ze seznamu a přesměruje uživatele na úvodní stránku, kde se zobrazí seznam vizitek – tentokrát už bez smazané vizitky.
 
 1. Udělej fork zdrojového repository do svého účtu na GitHubu, případně pokračuj ve svém úkolu z předchozí lekce.
 1. Naklonuj si repository **ze svého účtu** na GitHubu na lokální počítač.
