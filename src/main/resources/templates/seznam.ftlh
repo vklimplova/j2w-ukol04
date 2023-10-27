@@ -5,35 +5,51 @@
     [#include "_common/head.ftlh"]
 </head>
 <body>
-<div class="seznam">
-    [#list seznam as vizitka]
-    <a href="/detail/${vizitka?index}">
-        <div class="vizitka">
-            <div class="jmeno">Dita (Přikrylová) Formánková</div>
-            <div class="firma">Czechitas z. s.</div>
-            <div class="udaje">
-                <div class="adresa">
-                    <div>Václavské náměstí 837/11</div>
-                    <div><span>11000</span> Praha 1</div>
+[#list vizitka]
+    [#items as detail]
+        <div class="seznam">
+            <a href="/detail/${detail?index}">
+                <div class="vizitka">
+                    <div class="jmeno">${detail.jmeno}</div>
+                    <div class="firma">${detail.firma}</div>
+                    <div class="udaje">
+                        <div class="adresa">
+                            <div>${detail.ulice}</div>
+                            <div>${detail.obecPsc}</div>
+                        </div>
+                        <div class="kontakty">
+                            [#if detail.email??]
+                                <div><i class="las la-at"></i> <span>${detail.email}</span></div>
+                            [/#if]
+                            [#if detail.telefon??]
+                                <div><i class="las la-at"></i> <span>${detail.telefon}</span></div>
+                            [/#if]
+                            [#if detail.web??]
+                                <div><i class="las la-at"></i> <span>${detail.web}</span></div>
+                            [/#if]
+                        </div>
+                    </div>
                 </div>
-                <div class="kontakty">
-                    <div><i class="bi bi-at"></i> dita@example.com</div>
-                    <div><i class="bi bi-phone"></i> +420 800123456</div>
-                    <div><i class="bi bi-globe"></i> www.czechitas.cz</div>
-                </div>
-            </div>
+            </a>
         </div>
-    </a>
-    [/#list]
+    [/#items]
+[#else]
+    <div>
+        <em>Momentálně nemáme žádné vizitky k zobrazení.</em>
+    </div>
+[/#list]
+[#-- nová vizitka přes service --]
+<a href="/nova">
+    <div class="seznam">
+    <div class="vizitka vizitka--nova">
+        <svg width="100" height="100">
+            <rect width="20" height="100" x="40" y="0" fill="white" />
+            <rect width="100" height="20" x="0" y="40" fill="white" />
+        </svg>
+    </div>
+        </div>
+</a>
 
-    <a href="/nova">
-        <div class="vizitka vizitka--nova">
-            <svg width="100" height="100">
-                <rect width="20" height="100" x="40" y="0" fill="white" />
-                <rect width="100" height="20" x="0" y="40" fill="white" />
-            </svg>
-        </div>
-    </a>
-</div>
 </body>
 </html>
+

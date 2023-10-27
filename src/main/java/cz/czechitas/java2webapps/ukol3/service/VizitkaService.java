@@ -8,75 +8,12 @@ import java.util.List;
 
 @Service
 public class VizitkaService {
-  private final List<Vizitka> seznamVizitek = new ArrayList<>();
+    private final List<Vizitka> seznamVizitek = new ArrayList<>();
 
   public VizitkaService() {
-    seznamVizitek.add(
-            new Vizitka(
-                    "Dita (Přikrylová) Formánková",
-                    "Czechitas z. s.",
-                    "Václavské náměstí 837/11",
-                    "11000 Praha 1",
-                    "dita@czechitas.cs",
-                    "+420 800123456",
-                    "www.czechitas.cz"
-            )
-    );
-    seznamVizitek.add(
-            new Vizitka(
-                    "Barbora Bühnová",
-                    "Czechitas z. s.",
-                    "Škrobárenská 511/3",
-                    "61700 Brno",
-                    null,
-                    "+420 800123456",
-                    "www.czechitas.cz"
-            )
-    );
-    seznamVizitek.add(
-            new Vizitka(
-                    "Monika Ptáčníková",
-                    "Czechitas z. s.",
-                    "Technologická 372/2",
-                    "70800 Ostrava-Pustkovec",
-                    "monika@czechitas.cs",
-                    "+420 800123456",
-                    "www.czechitas.cz"
-            )
-    );
-    seznamVizitek.add(
-            new Vizitka(
-                    "Mirka Zatloukalová",
-                    "Czechitas z. s.",
-                    "Vavrečkova 5262",
-                    "76001 Zlín",
-                    "mirka@czechitas.cs",
-                    null,
-                    "www.czechitas.cz"
-            )
-    );
-    seznamVizitek.add(
-            new Vizitka(
-                    "Ondřej Čejka",
-                    "Czechitas z. s.",
-                    "Jungmannova 3",
-                    "77900 Olomouc",
-                    null,
-                    null,
-                    "www.czechitas.cz"
-            )
-    );
-    seznamVizitek.add(
-            new Vizitka(
-                    "Kateřina Reiglová",
-                    "Czechitas z. s.",
-                    "Lipová 1789/9",
-                    "37005 České Budějovice",
-                    null,
-                    null,
-                    "www.czechitas.cz"
-            )
-    );
+      seznamVizitek.add(new Vizitka("Tomáš Kusý","SK Joudrs Praha","Dolákova 1","Praha, 181 00","kusy@joudrs.cz","+420 123 345 789","joudrs.cz"));
+      seznamVizitek.add(new Vizitka("Karolína Dvořáková","Kačenky","Laubova 2","Praha, 130 00",null,null,"kacka.cz"));
+      seznamVizitek.add(new Vizitka("Veronika Klimplová","Inservis","Ratibořská 32","Praha, 181 00","veruklimpl@seznam.cz","+420 987 654 321",null));
   }
 
   public List<Vizitka> getAll() {
@@ -86,4 +23,14 @@ public class VizitkaService {
   public Vizitka getById(int id) {
     return seznamVizitek.get(id);
   }
+
+  //Přidání nové vizitky do seznamu vizitek
+    public void append(Vizitka vizitka) {
+        seznamVizitek.add(vizitka);
+    }
+
+    //Smazání vizitky v detailu id
+    public void deleteById(int id) {
+        seznamVizitek.remove(id);
+    }
 }

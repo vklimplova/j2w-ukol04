@@ -2,10 +2,8 @@ package cz.czechitas.java2webapps.ukol3.entity;
 
 import java.util.Objects;
 
-/**
- * Entita obsahující údaje zobrazené na vizitce.
- */
 public class Vizitka {
+
   private String jmeno;
   private String firma;
   private String ulice;
@@ -14,10 +12,9 @@ public class Vizitka {
   private String telefon;
   private String web;
 
-  public Vizitka() {
+  public Vizitka(){
   }
-
-  public Vizitka(String jmeno, String firma, String ulice, String obecPsc, String email, String telefon, String web) {
+  public Vizitka(String jmeno, String firma, String ulice, String obecPsc, String email, String telefon, String web){
     this.jmeno = Objects.requireNonNull(jmeno);
     this.firma = Objects.requireNonNull(firma);
     this.ulice = Objects.requireNonNull(ulice);
@@ -25,6 +22,7 @@ public class Vizitka {
     this.email = email;
     this.telefon = telefon;
     this.web = web;
+
   }
 
   public String getJmeno() {
@@ -32,7 +30,7 @@ public class Vizitka {
   }
 
   public void setJmeno(String jmeno) {
-    this.jmeno = Objects.requireNonNull(jmeno);
+    this.jmeno = jmeno;
   }
 
   public String getFirma() {
@@ -40,7 +38,7 @@ public class Vizitka {
   }
 
   public void setFirma(String firma) {
-    this.firma = Objects.requireNonNull(firma);
+    this.firma = firma;
   }
 
   public String getUlice() {
@@ -48,7 +46,7 @@ public class Vizitka {
   }
 
   public void setUlice(String ulice) {
-    this.ulice = Objects.requireNonNull(ulice);
+    this.ulice = ulice;
   }
 
   public String getObecPsc() {
@@ -56,7 +54,7 @@ public class Vizitka {
   }
 
   public void setObecPsc(String obecPsc) {
-    this.obecPsc = Objects.requireNonNull(obecPsc);
+    this.obecPsc = obecPsc;
   }
 
   public String getEmail() {

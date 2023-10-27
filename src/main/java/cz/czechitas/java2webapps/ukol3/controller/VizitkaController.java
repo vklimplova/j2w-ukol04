@@ -5,6 +5,7 @@ import cz.czechitas.java2webapps.ukol3.service.VizitkaService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.method.support.ModelAndViewContainer;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -24,15 +25,34 @@ public class VizitkaController {
 
   @GetMapping("/")
   public ModelAndView seznam() {
-    ModelAndView result = new ModelAndView("seznam");
-    result.addObject("seznam", service.getAll());
+    ModelAndView result = new ModelAndView("/seznam");
+    result.addObject("vizitka", service.getAll());
     return result;
   }
 
   @GetMapping("/detail/{id}")
-  public ModelAndView detail(@PathVariable int id) {
-    ModelAndView result = new ModelAndView("detail");
-    result.addObject("vizitka", service.getById(id));
+  public ModelAndView detail (@PathVariable int id) {
+    ModelAndView detaily = new ModelAndView("/detail");
+    detaily.addObject("detail", service.getById(id));
+    return detaily;
+  }
+
+  @GetMapping("/nova")
+  public ModelAndView novaVizitka() {
+    ModelAndView result = new ModelAndView("/nova");
     return result;
   }
+  //Přesměrování na hlavní stránku po kliknutí na přidání nové vizitky
+  @PostMapping("/nova")
+  public String append(Vizitka vizitka) {
+    service.append(vizitka);
+    return "redirect:/";
+  }
+
+  @PostMapping("/delete")
+  public String delete(int id) {
+    service.deleteById(id);
+    return "redirect:/";
+  }
+
 }

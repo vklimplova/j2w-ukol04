@@ -7,28 +7,38 @@
 <body>
 <div class="detail">
     <div class="vizitka">
-        <div class="jmeno">Dita (Přikrylová) Formánková</div>
-        <div class="firma">Czechitas z. s.</div>
+        <div class="jmeno">${detail.jmeno}</div>
+        <div class="firma">${detail.firma}</div>
         <div class="udaje">
             <div class="adresa">
-                <div>Václavské náměstí 837/11</div>
-                <div><span>11000</span> Praha 1</div>
+                <div>${detail.ulice}</div>
+                <div>${detail.obecPsc}</div>
             </div>
             <div class="kontakty">
-                <div><i class="bi bi-at"></i> dita@example.com</div>
-                <div><i class="bi bi-phone"></i> +420 800123456</div>
-                <div><i class="bi bi-globe"></i> www.czechitas.cz</div>
+                [#if detail.email??]
+                    <div><i class="las la-at"></i> <span>${detail.email}</span></div>
+                [/#if]
+                [#if detail.telefon??]
+                    <div><i class="las la-at"></i> <span>${detail.telefon}</span></div>
+                [/#if]
+                [#if detail.web??]
+                    <div><i class="las la-at"></i> <span>${detail.web}</span></div>
+                [/#if]
             </div>
         </div>
     </div>
 
+
     <div class="mapa">
-        <iframe style="border:none" src="https://frame.mapy.cz/?q=${"Václavské náměstí 837/11, Praha"?url}" width="100%" height="100%" frameborder="0"></iframe>
+        <iframe style="border:none" src="https://frame.mapy.cz/?q=${detail.celaAdresa?url}" width="100%" height="100%" frameborder="0"></iframe>
     </div>
 
-    <nav>
-        <a href="/">◂ zpět na seznam</a>
-    </nav>
+    <form method="post" action="/delete" class="d-inline">
+        <input type="hidden" name="id" value="${id}" />
+        <input type="submit" value="Smazat"/>
+    </form>
+
 </div>
 </body>
 </html>
+
